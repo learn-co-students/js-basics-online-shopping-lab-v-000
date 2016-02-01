@@ -47,13 +47,8 @@ function removeFromCart(item) {
   }
 }
 
-function tester() {
-  console.log();
-}
-
 
 function placeOrder() {
-  //tester();
   if (!cardNumber) {
     console.log("We don't have a credit card on file for you to place your order");
   } else {
