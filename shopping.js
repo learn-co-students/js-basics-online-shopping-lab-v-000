@@ -51,10 +51,11 @@ function removeFromCart(name) {
 }
 
 function placeOrder() {
-    debugger;
+  console.log("here");
   if( cardNumber != undefined) {
     console.log(
-      "Your total cost is: $" + total + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + (orderNumber - 1))
+      "Your total cost is: $" + total + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + (orderNumber++))
+    total = 0
   }
   else {
     console.log("We don't have a credit card on file for you to place your order")
