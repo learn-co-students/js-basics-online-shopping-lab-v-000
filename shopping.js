@@ -55,6 +55,7 @@ function placeOrder() {
   if( cardNumber != undefined) {
     console.log(
       "Your total cost is: $" + total + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + (orderNumber++))
+    cart = []
     total = 0
   }
   else {
