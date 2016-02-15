@@ -51,6 +51,8 @@ describe('#viewCart', function(){
     var puppyCost = cart[1]["puppy"];
     addToCart("iPhone");
     var iPhoneCost = cart[2]["iPhone"];
+    //console.log(cart)
+    //debugger;
     viewCart();
     expect(console.log.calls.argsFor(3)).toEqual(["In your cart you have: socks $" + socksCost]);
     expect(console.log.calls.argsFor(4)).toEqual(["In your cart you have: puppy $" + puppyCost]);
