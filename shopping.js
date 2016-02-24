@@ -31,7 +31,7 @@ function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++) {
     for (var key in cart[i]) {
       if (item === key) {
-        var price = cart[i][key];
+        var price = cart[i][item];
         total -= price;
         cart.splice(i, 1);
         bool = true;
@@ -51,5 +51,6 @@ function placeOrder() {
     orderNumber++;
     console.log('Your total cost is: $' + total + ' and will be charged to the credit card on file (' + cardNumber +'). Your order number is ' + orderNumber);
     total = 0;
+    cart = []
   }
 }
