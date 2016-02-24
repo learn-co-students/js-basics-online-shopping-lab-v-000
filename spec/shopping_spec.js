@@ -1,7 +1,7 @@
 'use strict';
 
 describe('#addToCart', function(){
-  
+
   beforeEach(function() {
     orderNumber = 1;
     total = 0;
@@ -140,7 +140,7 @@ describe('#placeOrder', function(){
     cardNumber = 12346312;
     spyOn(console, 'log');
     placeOrder();
-    expect(console.log.calls.argsFor(0)).toEqual(["Your total cost is: $" + origTotal + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + (orderNumber - 1)]);
+    expect(console.log.calls.argsFor(0)).toEqual(["Your total cost is: $" + origTotal + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + (orderNumber)]);
   });
 
   it("increments order number for each order", function(){
@@ -166,4 +166,3 @@ describe('#placeOrder', function(){
   });
 
 });
-
