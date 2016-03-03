@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="2" errors="0" failures="0" time="0.001" timestamp="2016-03-03T22:31:24">
+		<testcase classname="#addCreditCard" name="should store a credit card number for online orders" time="0">
+		</testcase>
+		<testcase classname="#addCreditCard" name="should print out that the credit card number has been saved" time="0">
+		</testcase>
+	</testsuite>
+</testsuites>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="1" errors="0" failures="0" time="0" timestamp="2016-03-03T22:31:24">
+		<testcase classname="#viewCart" name="should print each item in the cart and their cost" time="0">
+		</testcase>
+	</testsuite>
+</testsuites>
+

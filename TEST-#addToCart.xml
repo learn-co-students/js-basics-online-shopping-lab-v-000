@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="2" errors="0" failures="1" time="0.004" timestamp="2016-03-03T22:31:24">
+		<testcase classname="#addToCart" name="should print to the console that pizza was added to the cart" time="0.001">
+			<failure type="" message="ReferenceError: Strict mode forbids implicit creation of global property &amp;apos;itemToPurchase&amp;apos; in file:///home/nitrous/code/labs/js-basics-online-shopping-lab-v-000/shopping.js (line 15)">
+addToCart@file:///home/nitrous/code/labs/js-basics-online-shopping-lab-v-000/shopping.js:15:19
+file:///home/nitrous/code/labs/js-basics-online-shopping-lab-v-000/spec/shopping_spec.js:21:14
+attemptSync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1510:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1498:20
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:306:28
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1694:21
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1708:44
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1694:21
+file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:541:83
+attemptAsync@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1520:16
+run@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1496:28
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:1485:13
+queueRunnerFactory@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:518:42
+execute@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/jasmine.js:548:25
+onload@file:///usr/local/opt/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/learn-test-1.2.25/lib/learn_test/jasmine/boot.js:172:16			</failure>
+		</testcase>
+		<testcase classname="#addToCart" name="should add the price to the total" time="0.001">
+		</testcase>
+	</testsuite>
+</testsuites>
+

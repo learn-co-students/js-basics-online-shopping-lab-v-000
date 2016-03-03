@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="4" errors="0" failures="0" time="0.002" timestamp="2016-03-03T22:31:24">
+		<testcase classname="#placeOrder" name="doesn&amp;apos;t let you place an order if you don&amp;apos;t have a credit card on file" time="0">
+		</testcase>
+		<testcase classname="#placeOrder" name="let&amp;apos;s you place an order with a credit card on file" time="0">
+		</testcase>
+		<testcase classname="#placeOrder" name="increments order number for each order" time="0">
+		</testcase>
+		<testcase classname="#placeOrder" name="clears the total after each order" time="0.001">
+		</testcase>
+	</testsuite>
+</testsuites>
+
