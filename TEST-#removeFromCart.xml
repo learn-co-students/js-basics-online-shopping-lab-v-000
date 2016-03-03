@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="2" errors="0" failures="0" time="0.001" timestamp="2016-03-03T22:31:24">
+		<testcase classname="#removeFromCart" name="removes the cost of the item from the total" time="0">
+		</testcase>
+		<testcase classname="#removeFromCart" name="alerts you if you&amp;apos;re trying to remove an item that isn&amp;apos;t in your cart" time="0.001">
+		</testcase>
+	</testsuite>
+</testsuites>
+
