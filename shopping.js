@@ -55,6 +55,5 @@ function placeOrder () {
       + "(" +cardNumber+ ")" + ". Your order number is " + orderNumber);
     total = 0;
     orderNumber++;
-
   }
 }
