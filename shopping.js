@@ -5,8 +5,8 @@ var total = 0;
 var cardNumber;
 var cart = [];
 
-function addToCart(item, price) {
-  price = price || Math.floor(Math.random() * 100)
+function addToCart(item) {
+  var price = Math.floor(Math.random() * 100)
   var hash = {};
   hash[item] = price;
   cart.push(hash);
