@@ -1,7 +1,7 @@
 'use strict';
 
 describe('#addToCart', function(){
-  
+
   beforeEach(function() {
     orderNumber = 1;
     total = 0;
@@ -150,7 +150,7 @@ describe('#placeOrder', function(){
     expect(orderNumber).toEqual(1);
     placeOrder();
     var lintRoller = {"lint roller": 14}
-    var lysol = {lysol: 12};
+    var lysol = {"lysol": 12};
     cart.push(lintRoller);
     cart.push(lysol);
     expect(orderNumber).toEqual(2);
@@ -166,4 +166,3 @@ describe('#placeOrder', function(){
   });
 
 });
-
