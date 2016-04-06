@@ -25,19 +25,36 @@ function addCreditCard(number){
   return cardNumber = number;
 }
 
+// function removeFromCart(item){
+//   var foundItem = cart.find(function(object){
+//     return Object.keys(object) == item
+//   });
+//   if (foundItem) {
+//     total = total - foundItem[item];
+//     cart = cart.filter(function(object){
+//       return object != foundItem;
+//     });
+//     return cart;
+//   } else {
+//     console.log("That item is not in your cart");
+//   }
+// }
+
 function removeFromCart(item){
-  var foundItem = cart.find(function(object){
-    return Object.keys(object) == item
-  });
-  if (foundItem) {
-    total = total - foundItem[item];
-    cart = cart.filter(function(object){
-      return object != foundItem;
-    });
-    return cart;
-  } else {
-    console.log("That item is not in your cart");
-  }
+
+  for (var i = 0; i < cart.length; i ++){
+    for (var key in cart[i]) {
+      if (key == item){
+        var price = cart[i][item];
+        cart.splice(i, 1);
+        console.log(item + " has been removed from your cart")
+        total -= price;
+      }
+      else{
+        console.log("That item is not in your cart");
+      }
+    }
+  } 
 }
 
 
