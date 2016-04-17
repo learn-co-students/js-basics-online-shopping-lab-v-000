@@ -8,8 +8,9 @@ var cart=[];
 function addToCart (str) {
   
   var price = Math.floor((Math.random() * 100));;
-  
-  cart.push({item: price});
+  itemToBuy={}
+  itemToBuy[item]=price
+  cart.push(itemToBuy);
   total+=price;
   console.log( item + " has been added to your cart.");
 
