@@ -47,18 +47,12 @@ function removeFromCart(item) {
   })
 }
 
-// function placeOrder() {
-//   if (cardNumber === "undefined") {
-//     return "We don't have a credit card on file for you to place your order";
-//   }else{
-//     var subtotal = 0;
-//     total = cart.forEach(function(item) {
-//       subtotal += item[price]; 
-//     });
-//   }
-//     console.log("Your total cost is: " + total + " and will be charged to the credit card on file " cardNumber> + ". Your order number is " + orderNumber);
-//     cart = [];
-//     total = 0;
-//     orderNumber += 1;
-//   }
-// }
+function placeOrder() {
+  if (cardNumber === undefined) {
+    console.log("We don't have a credit card on file for you to place your order");
+  }else{
+    console.log("Your total cost is: $" + total + " and will be charged to the credit card on file " + "(" + cardNumber + ")" + ". Your order number is " + orderNumber);
+    orderNumber += 1;
+    total = 0;
+ }
+}
