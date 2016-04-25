@@ -1,0 +1,10 @@
+
+
+
+
+
+
+
+Expected [ 'Your total cost is: $27 and will be charged to the credit card on file (12346312). Your order number is 0' ] to equal [ 'Your total cost is: $27 and will be charged to the credit card on file (12346313). Your order number is 0' ].
+Error: Expected [ 'Your total cost is: $27 and will be charged to the credit card on file (12346312). Your order number is 0' ] to equal [ 'Your total cost is: $27 and will be charged to the credit card on file (12346313). Your order number is 0' ].
+    at stack (file:///Users/flatironschool/.rvm/gems/ruby-2.2.3/gems/learn-test-2.1.2/lib/learn_test/strategies/jasmine/jasmine.js:1293:17)
