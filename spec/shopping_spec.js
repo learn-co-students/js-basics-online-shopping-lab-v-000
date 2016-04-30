@@ -1,7 +1,7 @@
 'use strict';
 
 describe('#addToCart', function(){
-  
+
   beforeEach(function() {
     orderNumber = 1;
     total = 0;
@@ -166,4 +166,3 @@ describe('#placeOrder', function(){
   });
 
 });
-
