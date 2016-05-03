@@ -48,7 +48,6 @@ function removeFromCart(itemToRemove){
 }
 
 function placeOrder(){
-  // debugger;
   if (cardNumber == undefined){
     console.log("We don't have a credit card on file for you to place your order");
   }
@@ -56,5 +55,6 @@ function placeOrder(){
     orderNumber += 1;
     console.log("Your total cost is: $" + total + ' and will be charged to the credit card on file (' + cardNumber + '). Your order number is ' + (orderNumber - 1));
     total = 0;
+    cart = [];
   }
 }
