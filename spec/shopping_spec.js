@@ -157,13 +157,22 @@ describe('#placeOrder', function(){
   });
 
 
-    it("clears the total after each order", function(){
+  it("clears the total after each order", function(){
     cart = [{pizza: 27}];
     total = 27;
     cardNumber = 12346312;
     placeOrder();
     expect(total).toEqual(0);
   });
+
+  it("clears the cart after each order", function(){
+    cart = [{pizza: 27}];
+    total = 27;
+    cardNumber = 12346312;
+    placeOrder();
+    expect(cart).toEqual([]);
+  });
+
 
 });
 
