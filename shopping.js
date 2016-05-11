@@ -33,8 +33,6 @@ function addCreditCard(number) {
   return cardNumber;
 }
 
-
-
 function removeFromCart(item) {
   cart.forEach(function(cartitem, index) {
     if (item in cartitem) {
@@ -45,4 +43,16 @@ function removeFromCart(item) {
       console.log("That item is not in your cart");
     }
   });
+}
+
+function placeOrder() {
+  if (cardNumber == null) {
+    console.log("We don't have a credit card on file for you to place your order");
+  }
+  else {
+    console.log("Your total cost is: $" + total + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + orderNumber);
+    total = 0;
+    cart = [];
+    orderNumber++;
+  }
 }
