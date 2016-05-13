@@ -24,7 +24,7 @@ const meals = {
 
 const mealNames = Object.keys(meals)
 
-for (let i = 0, l = mealNames.length; i < l; i++) {
+for (var i = 0, l = mealNames.length; i < l; i++) {
   console.log(`I ate ${meals[mealNames[i]]} for ${mealNames[i]}!`)
 }
 
@@ -44,7 +44,7 @@ const meals = {
   dinner: 'spaghetti'
 }
 
-for (let mealName in meals) {
+for (var mealName in meals) {
   console.log(`I ate ${meals[mealName]} for ${mealName}!`)
 }
 ```

@@ -96,7 +96,7 @@ describe('shopping', () => {
   });
 
   describe('#placeOrder', () => {
-    it("doesn't let you place an order if you don't provide a credit card number", () => {
+    it("doesn't var you place an order if you don't provide a credit card number", () => {
       chai.spy.on(console, 'log');
 
       placeOrder();
@@ -106,7 +106,7 @@ describe('shopping', () => {
       console.log.reset()
     });
 
-    it("lets you place an order with a credit card", () => {
+    it("vars you place an order with a credit card", () => {
       chai.spy.on(console, 'log');
 
       addToCart('pizza')
@@ -133,7 +133,7 @@ describe('shopping', () => {
 })
 
 function hasItem(c, item) {
-  for (let i = 0, l = c.length; i < l; i++) {
+  for (var i = 0, l = c.length; i < l; i++) {
     if (c[i].hasOwnProperty(item)) {
       return true
     }
