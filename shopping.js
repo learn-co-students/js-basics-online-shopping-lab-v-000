@@ -31,17 +31,14 @@ function addToCart(item) {
   return cart;
 }
 
-function viewCart() {
-  if (cart.length === 0) {
-    console.log("Your shopping cart is empty.");
-  } else {
-    for (var i = 0; i < cart.length; i++) {
-      for (let itemName in cart[i]) {
-        //need to revisit
-        const socksCost = getCart()[0]["socks"];
-        const puppyCost = getCart()[1]["puppy"];
-        const iPhoneCost = getCart()[2]["iPhone"];
-        console.log(`In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`)
+function viewCart(){
+  if (cart.length == 0){
+    console.log("Your shopping cart is empty");
+  }
+  else {
+    for (var i = 0; i < cart.length; i++){ 
+      for (var key in cart[i]) {
+        console.log("In your cart you have: " + key + " $" + cart[i][key]);
       }
     }
   }
