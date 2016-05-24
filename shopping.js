@@ -24,9 +24,10 @@ function setCart(arr) {
 
 function addToCart(item) {
   var cartItem = {};
-  cartItem[item] = Math.random(0,100);
+  cartItem[item] = Math.floor(Math.random(0,1) * 100);
   cart.push(cartItem);
-  console.log(cartItem + " has been added to your cart.");
+  console.log(item + " has been added to your cart.");
+  debugger;
   return cart;
 }
 
@@ -35,7 +36,34 @@ function viewCart() {
     console.log("Your shopping cart is empty.");
   } else {
     for (var i = 0; i < cart.length; i++) {
-      console.log("In your cart you have" + cart[i] + ".")
+      for (let itemName in cart[i]) {
+        //need to revisit
+        const socksCost = getCart()[0]["socks"];
+        const puppyCost = getCart()[1]["puppy"];
+        const iPhoneCost = getCart()[2]["iPhone"];
+        console.log(`In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`)
+      }
     }
+  }
+}
+
+function removeFromCart(item) {
+  for(var i = 0; i < cart.length; i++) {
+    for (let name in cart[i]) {
+      if (name === item) {
+        delete cart[i];
+        return cart;
+      } 
+    }
+  } 
+  console.log("That item is not in your cart.");
+}
+
+function placeOrder(cc) {
+  if (typeof cc == 'undefined') {
+    console.log("We don't have a credit card on file for you to place your order.");
+  } else {
+    console.log("Your total cost is $" +total()+ ", which will be charged to the card " +cc+ ".")
+    cart = [];
   }
 }
