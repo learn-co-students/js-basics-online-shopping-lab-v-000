@@ -1,3 +1,5 @@
+var cart = [];
+
 function total() {
   let t = 0
 
@@ -8,4 +10,32 @@ function total() {
   }
 
   return t
+}
+
+
+function getCart() {
+  return cart;
+}
+
+function setCart(arr) {
+  cart = arr;
+  return cart;
+}
+
+function addToCart(item) {
+  var cartItem = {};
+  cartItem[item] = Math.random(0,100);
+  cart.push(cartItem);
+  console.log(cartItem + " has been added to your cart.");
+  return cart;
+}
+
+function viewCart() {
+  if (cart.length === 0) {
+    console.log("Your shopping cart is empty.");
+  } else {
+    for (var i = 0; i < cart.length; i++) {
+      console.log("In your cart you have" + cart[i] + ".")
+    }
+  }
 }
