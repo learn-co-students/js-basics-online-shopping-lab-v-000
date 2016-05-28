@@ -30,8 +30,7 @@ describe('shopping', () => {
       chai.spy.on(console, 'log')
 
       addToCart('pizza');
-
-    //  expect(console.log).to.have.been.called.with("pizza has been added to your cart.");
+      expect(console.log).to.have.been.called.with("pizza has been added to your cart.");
 
       console.log.reset();
     })
