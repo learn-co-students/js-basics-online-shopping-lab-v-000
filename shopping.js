@@ -16,11 +16,6 @@ function getCart() {
   return cart;
 }
 
-function setCart(array) {
-  cart = array;
-  return cart;
-}
-
 function addToCart(item) {
   var price = Math.floor((Math.random() * 100));
   item_object = {item: price};
@@ -30,15 +25,22 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart.length) {
-    message = ("In your cart you have ");
-    body = [];
-    cart.forEach(function(item)) {
-      for (let itemObject in item) {
-        body.push(`${itemObject} at ${item[itemObject]}`);
+  if (cart.length === 0) {
+    console.log("You shopping cart is empty.")
+  }
+  else {
+    for (var i = 0; i < cart.length; i++) {
+      for (var key in cart[i]) {
+        console.log("In your cart you have: " + key + "at $" + cart[i][key]);
       }
     }
-    body.join(', ');
-    console.log(message + body + ".");
   }
+}
+
+function removeFromCart(item) {
+
+}
+
+function placeOrder(number) {
+
 }
