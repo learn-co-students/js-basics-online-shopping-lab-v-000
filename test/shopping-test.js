@@ -55,7 +55,11 @@ describe('shopping', () => {
 
       viewCart();
 
-      expect(console.log).to.have.been.called.with(`In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`)
+    expect(console.log.calls.argsFor(3)).toEqual(["In your cart you have: socks $" + socksCost]);
+    expect(console.log.calls.argsFor(4)).toEqual(["In your cart you have: puppy $" + puppyCost]);
+    expect(console.log.calls.argsFor(5)).toEqual(["In your cart you have: iPhone $" + iPhoneCost]);
+    
+      // expect(console.log).to.have.been.called.with(`In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`)
       console.log.reset()
     });
   });
