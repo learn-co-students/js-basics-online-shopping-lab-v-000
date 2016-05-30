@@ -20,7 +20,7 @@ function addToCart(item) {
   var item_object = {};
   var price = Math.floor(Math.random() * 100);
   item_object[item] = price;
-  cart.push({item: price});
+  cart.push(item_object);
   total += price;
   console.log(item + " has been added to your cart.");
   return cart;
@@ -54,17 +54,30 @@ function addCreditCard(creditCardNum){
   return cardNumber;
 }
 
-function removeFromCart(itemToRemove){
-  cart.forEach(function(cartItem, index){
-    for(var key in cartItem){
-      if (itemToRemove == key){
-        total -= cartItem[key];
-        cart.splice(index, 1);
-      }
-      else {
-        console.log("That item is not in your cart");
-      }
+function removeFromCart(item) {
+  var foundItem = false;
+
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].hasOwnProperty(item)) {
+      foundItem = true;
+      cart.splice(i);
     }
-  });
+  }
+
+  if (foundItem === false) {
+    console.log("That item is not in your cart.");
+  }
+  
+  return cart;
 }
 
+function placeOrder(creditCardNumber) {
+  if (!creditCardNumber) {
+    console.log("We don't have a credit card on file for you to place your order.");
+  } else {
+    console.log("Your total cost is: $" + total + " and will be charged to the credit card on file (" + cardNumber + "). Your order number is " + orderNumber);
+    orderNumber ++;
+    cart = [];
+    total = 0;
+  }
+}
