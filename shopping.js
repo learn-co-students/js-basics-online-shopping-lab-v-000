@@ -1,3 +1,28 @@
+var cart = []
+
+function getCart() {
+  return cart
+}
+
+function setCart() {
+
+}
+
+function addToCart(item) {
+  var new_item = new Object();
+  cart.push(new_item[item] = Math.random)
+  console.log(`${item} has been added to your cart.`)
+  return cart
+}
+
+function removeFromCart() {
+
+}
+
+function viewCart() {
+  console.log(cart)
+}
+
 function total() {
   let t = 0
 
