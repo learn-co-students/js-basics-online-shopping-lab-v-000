@@ -27,19 +27,20 @@ function addToCart(item) {
   return cart
 }
 
-function removeFromCart() {
-
-}
-
 function viewCart() {
-  var cart_items = []
-  for(var i = 0; i < cart.length; i++){
-    for(let key in cart[i]) {
-      cart_items.push(`${key} at $${cart[i][key]}`)
+  if(cart.length === 0) {
+    console.log("Your shopping cart is empty.")
+  }else {
 
+    var cart_items = []
+    for(var i = 0; i < cart.length; i++){
+      for(let key in cart[i]) {
+        cart_items.push(`${key} at $${cart[i][key]}`)
+
+      }
     }
+    console.log(`In your cart, you have ` + cart_items.join(", ") + ".")
   }
-  console.log(`In your cart, you have ` + cart_items.join(", ") + ".")
 }
 
 function removeFromCart(item) {
