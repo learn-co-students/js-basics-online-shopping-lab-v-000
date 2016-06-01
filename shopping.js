@@ -15,8 +15,8 @@ function getCart() {
   return cart
 }
 
-function setCart() {
-
+function setCart(array) {
+  cart.length = array.length
 }
 
 function addToCart(item) {
