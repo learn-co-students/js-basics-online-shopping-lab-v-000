@@ -31,6 +31,7 @@ function getRandomInt(min, max) {
 
 function addToCart(item) {
   var newItem =  {};
+
   newItem[item] = getRandomInt(1, 100);
   cart.push(newItem);
   console.log(Object.keys(newItem) + ' has been added to your cart.');
