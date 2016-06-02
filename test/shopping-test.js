@@ -21,7 +21,7 @@ describe('shopping', () => {
 
   describe('#addToCart', () => {
     it("should add an item to the cart", () => {
-      addToCart('pizza')
+      addToCart('pizza');
 
       expect(getCart().length).to.equal(1);
     });
@@ -29,17 +29,17 @@ describe('shopping', () => {
     it("logs that the item has been added", () => {
       chai.spy.on(console, 'log')
 
-      addToCart('pizza')
-
+      addToCart('pizza');
       expect(console.log).to.have.been.called.with("pizza has been added to your cart.");
 
-      console.log.reset()
+      console.log.reset();
     })
 
     it("returns the cart", () => {
       expect(addToCart("pizza")).to.eql(getCart())
     })
   });
+
 
   describe('#viewCart', () => {
     it("should print each item in the cart and their cost", () => {
