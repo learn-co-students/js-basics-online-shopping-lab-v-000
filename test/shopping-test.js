@@ -44,7 +44,7 @@ describe('shopping', () => {
   describe('#viewCart', () => {
     it("should print each item in the cart and their cost", () => {
       chai.spy.on(console, 'log');
-
+      
       addToCart("socks");
       addToCart("puppy");
       addToCart("iPhone");
