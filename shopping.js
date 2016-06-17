@@ -21,7 +21,7 @@ function setCart(array){
 }
 
 function addToCart(item){
-  price = Math.floor(Math.random() * 100);
+  var price = Math.floor(Math.random() * 100);
   var forSale = {item: price};
   cart.push(forSale);
   console.log(`${item} has been added to your cart.`);
@@ -34,9 +34,9 @@ function viewCart(){
     return ("Your shopping cart is empty.");
   } else {
     var englishCart = [];
-    for(index in cart){
+    for(var index in cart){
       var forSale = cart[index]
-      for(item in forSale){
+      for(var item in forSale){
         englishCart.push(`${item} at $${forSale[item]}`);
       }
     }
@@ -50,7 +50,7 @@ function viewCart(){
 
 function removeFromCart(item){
 
-  for(index in cart){
+  for(var index in cart){
     if(cart[index].hasOwnProperty(item)){
       cart.splice(index, 1);
       return cart;
