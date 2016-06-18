@@ -55,6 +55,7 @@ describe('shopping', () => {
 
       viewCart();
 
+
       expect(console.log).to.have.been.called.with(`In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`)
       console.log.reset()
     });
