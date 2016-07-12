@@ -1,3 +1,5 @@
+"use strict";
+
 var cart = [];
 
 function getCart() {
@@ -9,33 +11,35 @@ function setCart(cartArray) {
 }
 
 function addToCart(item) {
-  var min = 0, max = 100; 
-  var price = Math.floor(Math.random() * (max - min + 1)) + min;
+  let price = Math.floor(Math.random() * 100);
 
-  cart.push({item: price});
-  console.log(item+" has been added to your cart.");
+  cart.push({[item]: price});
+  console.log(item + " has been added to your cart.");
   return cart;
 }
 
 function viewCart() {
+  var items = [];
 
-  if (cart.length <= 0) {
+  if (cart.length == 0) {
     return "Your shopping cart is empty.";
   } else {
-    for (var i = cart.length; i > 0; i--) {
-      item = Object.keys(cart[i]);
-      
-      console.log("In your cart you have "+cart[i].item+".");
+    for (var i = 0; i < cart.length; i++) {
+      let item  = Object.keys(cart[i]);
+      let price = cart[i].item
+
+      items.push(item+" at $"+price);
     }
   }
+  console.log("In your cart you have "+items.join(', ')+".");
 }
 
 function removeFromCart(item) {
   if (cart.length > 0) {
-    for (var i = 0, i < cart.length; i++) {
+    for (var i = 0; i < cart.length; i++) {
       if (cart[i].hasOwnProperty(item)){
         delete cart[i];
-        cart.shift;
+        cart = cart.slice(0, i).concat(cart.slice(i + 1))
       }
     }
   } else {
@@ -45,23 +49,23 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  if (cardNumber) {
-    return "Your total cost is "+total()+", which will be charged to "+cardNumber+".";
-    cart = [];
+  if (!cardNumber) {
+    return console.log("We don't have a credit card on file for you to place your order.");
   } else {
-    return "We don't have a credit card on file for you to place your order.";
+    let confirmation = "Your total cost is $"+total()+", which will be charged to the card "+cardNumber+".";
+    setCart([]);
+    return confirmation;
   }
 }
 
 function total() {
   let t = 0
-
+  
   for (var i = 0, l = cart.length; i < l; i++) {
-    for (var item in cart[i]) {
-      t += cart[i][item]
-    }
+   for (var item in cart[i]) {
+     t += cart[i][item]
+   }
   }
-
-  return t;
+  return t
 }
 
