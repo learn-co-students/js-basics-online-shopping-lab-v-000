@@ -1,3 +1,4 @@
+require("../shopping.js");
 /*global beforeEach, describe, it */
 
 const chai = require('chai')
