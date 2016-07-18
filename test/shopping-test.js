@@ -1,3 +1,5 @@
+'use strict';
+
 /*global beforeEach, describe, it */
 
 const chai = require('chai')
