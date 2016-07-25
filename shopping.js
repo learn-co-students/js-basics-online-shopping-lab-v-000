@@ -49,7 +49,7 @@ function removeFromCart(item) {
     for(var cartItem in cart[i]){
       if (cartItem.hasOwnProperty(item)) {
         itemInCart = true;
-        delete cartItem[item];
+        cart.splice(i, 1)
       }
     }
   }
@@ -60,10 +60,10 @@ function removeFromCart(item) {
 }
 
 function placeOrder(creditCard) {
-  if (creditCard) {
+  if (!creditCard) {
+    console.log("We don't have a credit card on file for you to place your order.");
+  } else {
     console.log("Your total cost is $" + total() + ", which will be charged to the card " + creditCard + ".");
     cart = [];
-  } else {
-    console.log("We don't have a credit card on file for you to place your order.");
   }
 }
