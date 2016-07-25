@@ -46,11 +46,9 @@ function viewCart() {
 function removeFromCart(item) {
   var itemInCart = false
   for(var i = 0; i < cart.length; i++){
-    for(var cartItem in cart[i]){
-      if (cartItem.hasOwnProperty(item)) {
-        itemInCart = true;
-        cart.splice(i, 1)
-      }
+    if (cart[i].hasOwnProperty(item)) {
+      itemInCart = true;
+      cart.splice(i, 1);
     }
   }
   if (!itemInCart) {
