@@ -15,3 +15,7 @@ function total() {
 
   return t
 }
+
+function setCart(array) {
+  cart = array
+}
