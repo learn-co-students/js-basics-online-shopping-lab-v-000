@@ -1,11 +1,20 @@
-function total() {
-  let t = 0
 
-  for (var i = 0, l = cart.length; i < l; i++) {
-    for (var item in cart[i]) {
-      t += cart[i][item]
-    }
-  }
+var cart = []
+function setCart(c) {
+  cart = c
+}
+function addToCart(item) {
+  cart.push({ [item]: price })
+  console.log(`${item} has been added to your cart.`)
 
-  return t
+return cart
+}
+
+function getCart(){
+  return cart
+}
+
+function viewCart(cart){
+  for (var key in cart) {
+console.log('In your cart, you have'+key+' at '+cart[key])
 }
