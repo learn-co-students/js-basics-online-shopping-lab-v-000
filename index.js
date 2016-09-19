@@ -22,7 +22,7 @@ function getCart() {
 
 function addToCart(new_item) {
   var num = Math.floor(Math.random() * 100);
-  cart.push({new_item: num});
+  cart.push({[new_item]: num});
   console.log(new_item + " has been added to your cart.");
   return cart;
 }
