@@ -33,10 +33,9 @@ function total() {
   return t
 }
 
-
 function addToCart(item) {
   var price = Math.floor(Math.random() * 100);
-  cart.push({item: price});
+  cart.push({[item]: price});
   console.log(`${item} has been added to your cart.`);
   return cart;
 }
@@ -52,6 +51,7 @@ function viewCart() {
       itemsAndPrices.push(item + " at $" + cart[item]);
     }
   });
+  debugger;
   console.log(`In your cart, you have ${itemsAndPrices.join(", ")}.`);
 }
 
