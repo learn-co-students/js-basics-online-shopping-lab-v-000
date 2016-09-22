@@ -21,6 +21,19 @@ function total() {
   return t
 }
 
+function total() {
+  let t = 0
+
+  for (var i = 0, l = cart.length; i < l; i++) {
+    for (var item in cart[i]) {
+      t += cart[i][item]
+    }
+  }
+
+  return t
+}
+
+
 function addToCart(item) {
   var price = Math.floor(Math.random() * 100);
   cart.push({item: price});
@@ -29,26 +42,24 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart.length > 0) {
-    for (var i = 0; i < cart.length; i++) {
-      var itemObject = cart[i];
-      var item = Object.keys(itemObject);
-      var price = itemObject[item];
-      // global
-      itemsAndPrices = [];
-      itemsAndPrices.push(`${item} at ${price}`)
-    }
-    console.log(`In your cart you have ${itemsAndPrices.join(', ')}`);
-  }
-  else {
+  if (cart.length === 0) {
     console.log("Your shopping cart is empty.");
   }
+
+  var itemsAndPrices = [];
+  cart.forEach(function(cart) {
+    for(var item in cart) {
+      itemsAndPrices.push(item + " at $" + cart[item]);
+    }
+  });
+  console.log(`In your cart, you have ${itemsAndPrices.join(", ")}.`);
 }
 
 function removeFromCart(item) {
   for (var i = 0; i < cart.length; i++) {
     if (cart[i].hasOwnProperty(item)) {
      // TODO: remove item from cart
+      cart.splice([i], 1);
     }
     else {
       console.log("That item is not in your cart.");
