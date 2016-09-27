@@ -38,7 +38,6 @@ function viewCart() {
     let item = Object.keys(itemAndPrice)[0];
     let price = itemAndPrice[item];
     itemsAndPrices.push(`${item} at \$${price}`)
-    debugger;
   };
   console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
 }
@@ -49,6 +48,7 @@ function removeFromCart(item) {
   for (let i = 0, l = cart.length; i < l; i++) {
     if (cart[i].hasOwnProperty(item)) {
       itemInCart = true;
+      debugger;
       cart = cart.slice(0, i).concat(cart.slice(i + 1));
     };
   };
@@ -63,6 +63,6 @@ function placeOrder(creditCard) {
   if(!creditCard) {
     return console.log("We don't have a credit card on file for you to place your order.");
   };
-  console.log('Your total cost is $${total()}, which will be charged to the card ${creditCard}.');
-    cart = [];
+  console.log(`Your total cost is $${total()}, which will be charged to the card ${creditCard}.`);
+  cart = [];
 }
