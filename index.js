@@ -16,7 +16,7 @@ function total() {
   return t
 }
 
-function getCart {
+function getCart() {
   return cart
 }
 
