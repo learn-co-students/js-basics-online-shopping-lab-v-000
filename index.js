@@ -52,10 +52,10 @@ function removeFromCart(item) {
         cart.splice(i, 1);
         return cart;
       } else {
-        console.log("That item is not in your cart.");
       }
     }
   }
+  console.log("That item is not in your cart.");
 }
 
 function placeOrder(card) {
