@@ -22,7 +22,7 @@ function viewCart() {
 
   var itemPricePairs = [];
 
-  for (var i = 0; i < 1; i++) {
+  for (var i = 0; i < cart.length; i++) {
     var itemAndPrice = cart[i];
     var item = Object.keys(itemAndPrice)[0];
     var price = itemAndPrice[item];
@@ -51,11 +51,11 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   if (!cardNumber) {
-    console.log("We don't have a credit card on file for you to place your order.");
-  } else {
-    console.log("Your total cost is $" + total() + ", which will be charged to the card " + cardNumber);
+    return console.log("We don't have a credit card on file for you to place your order.")
   }
-  return cart = []
+
+  console.log("Your total cost is $" + total() + ", which will be charged to the card " + cardNumber + ".");
+  cart = []
 }
 
 function total() {
