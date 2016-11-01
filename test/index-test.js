@@ -38,7 +38,7 @@ describe('#viewCart', function() {
     const socksCost = getCart()[0]["socks"];
     const puppyCost = getCart()[1]["puppy"];
     const iPhoneCost = getCart()[2]["iPhone"];
-
+    debugger;
     viewCart();
 
     expect(console.log).toHaveBeenCalledWith(
