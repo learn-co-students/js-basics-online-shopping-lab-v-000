@@ -25,15 +25,13 @@ function viewCart() {
 }
 
 function removeFromCart(item) {
-  let itemInCart = false
   for (let i = 0, l = cart.length; i < l; i++) {
     if (cart[i].hasOwnProperty(item)) {
       cart.splice(i, 1);
       return cart;
     }
-  } if (!itemInCart) {
-    console.log("That item is not in your cart.");
   }
+  console.log("That item is not in your cart.");
 }
 
 function placeOrder(cardNumber) {
