@@ -19,38 +19,46 @@ function addToCart(item) {
   return cart;
 }
 
-// function viewCart() {
-//   if (cart.length > 0) {
-//     var cartCall = "In your cart, you have "
-//     for (var item in cart) {
-//       var itemName = Object.keys(cart[item])[0]
-//       debugger
-//       cartCall += `${itemName} at ${cart[item][itemName]}, `;
-//     }
-//     console.log(cartCall.slice(0, -2) + ".");
-//   } else {
-//     console.log("Your shopping cart is empty.")
-//   }
-// }
-
 function viewCart() {
-  const l = cart.length
+  var l = cart.length
 
   if (!l) {
     return console.log("Your shopping cart is empty.")
   }
 
-  const itemsAndPrices = []
+  var itemsAndPrices = []
 
-  for (let i = 0; i < l; i++) {
-    let itemAndPrice = cart[i]
-    let item = Object.keys(itemAndPrice)[0]
-    let price = itemAndPrice[item]
+  for (var i = 0; i < l; i++) {
+    var itemAndPrice = cart[i]
+    var item = Object.keys(itemAndPrice)[0]
+    var price = itemAndPrice[item]
 
     itemsAndPrices.push(`${item} at \$${price}`)
   }
 
   console.log(`In your cart, you have ${itemsAndPrices.join(', ')}.`)
+}
+
+function removeFromCart(item) {
+  var l = cart.length
+
+  for (var i = 0; i < l; i++) {
+    var itemObject = cart[i]
+
+    var returnValue;
+
+    for (var prop in itemObject) {
+      if (itemObject.hasOwnProperty(item)) {
+        cart.splice(i, 1)
+        returnValue = cart
+      }
+    }
+  }
+  if (returnValue) {
+    return returnValue;
+  } else {
+    console.log("That item is not in your cart.");
+  }
 }
 
 function total() {
@@ -63,4 +71,14 @@ function total() {
   }
 
   return t
+}
+
+function placeOrder(creditCardNumber) {
+  if (creditCardNumber) {
+    var returnValue = `Your total cost is $${total()}, which will be charged to the card ${creditCardNumber}.`;
+    cart = [];
+  } else {
+    var returnValue = "We don't have a credit card on file for you to place your order."
+  }
+  console.log(returnValue);
 }
