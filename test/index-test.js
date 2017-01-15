@@ -1,5 +1,5 @@
 /*global afterEach, beforeEach, describe, it */
-
+"use strict"; 
 
 beforeEach(function() {
   setCart([])
@@ -22,7 +22,7 @@ describe('#addToCart', function() {
     addToCart('pizza')
 
     expect(console.log).toHaveBeenCalledWith("pizza has been added to your cart.")
-  })
+  }); 
 
   it("returns the cart", function() {
     expect(addToCart("pizza")).toEqual(getCart())
