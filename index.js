@@ -58,16 +58,21 @@ function removeFromCart(item){
       break;
     }
   }
-  return "That item is not in your cart." 
+  if (!itemFound){
+    return "That item is not in your cart." 
+  }
+  return cart 
 }
-
 
 
 function placeOrder(number){
   if (number === undefined){
     return "We don't have a credit card on file for you to place your order."
   } else {
-    return `Your total cost is $${total()}, which will be charged to the card ${number}.`
+    console.log( `Your total cost is $${total()}, which will be charged to the card ${number}.`)
   }
+  cart = []
+  return cart
 }
+
 
