@@ -45,7 +45,6 @@ describe('#viewCart', function() {
     const iPhoneCost = getCart()[2]["iPhone"];
 
     viewCart();
-
     expect(console.log).toHaveBeenCalledWith(
       `In your cart, you have socks at $${socksCost}, puppy at $${puppyCost}, iPhone at $${iPhoneCost}.`
     )
