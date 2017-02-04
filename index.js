@@ -35,7 +35,7 @@ function viewCart() {
       for (var i = 0, l = cart.length; i < l; i++) {
         //iterating through objects in the cart
         let itemPricePair = cart[i];
-        //the item is the 0th element of each pair
+        //the item is the 0th element of each pair in the object
         let item = Object.keys(itemPricePair)[0];
         //value = object[key]
         let price = itemPricePair[item];
@@ -45,20 +45,28 @@ function viewCart() {
       }
     }
 
-/*
-function removeFromCart(item) {
-  if (cart.includes(item)) {
-    var index = cart.indexOf(item);
-    if (index > -1) {
-        cart.splice(index, 1);
-    }
-  } else {
-    console.log("That item is not in your cart.")
-  }
+
+function removeFromCart(potentialItem) {
+  for (var i = 0, l = cart.length; i < l; i++) {
+    let itemPricePair = cart[i];
+    let item = Object.keys(itemPricePair)[0];
+      for (item in itemPricePair) {
+        if (itemPricePair.hasOwnProperty(potentialItem)) {
+          cart.shift(i);
+        } 
+      } 
+  } console.log("That item is not in your cart.");
   return cart;
 }
 
 function placeOrder(creditCardNumber) {
-
+  if (!creditCardNumber) {
+    console.log("We don't have a credit card on file for you to place your order.");
+  } else {
+    console.log(`Your total cost is \$${total()}, which will be charged to the card ${creditCardNumber}.`)
+    while (cart.length > 0 ) {
+      cart.pop();
+    }
+  }
 }
-*/
+
