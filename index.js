@@ -1,4 +1,4 @@
-var cart;
+var cart = [];
 
 function setCart(newCart) {
   cart = newCart;
@@ -14,4 +14,19 @@ function total() {
   }
 
   return t
+}
+
+
+function getCart() {
+  return cart
+}
+
+function addToCart(item) {
+  var price =
+}
+
+function viewCart() {
+  if (cart.length === 0) {
+    console.log("Your shopping cart is empty.")
+  }
 }
