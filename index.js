@@ -43,17 +43,14 @@ function viewCart() {
 
 function removeFromCart(item) {
   for(let i = 0; i < cart.length; i++) {
-    for(var itemName in cart[i]) {
-      if(itemName === item) {
-        var newCart = [...cart.slice(0, i), ...cart.slice(i+1)];
-      }
+    if(cart[i].hasOwnProperty(item)) {
+      var newCart = [...cart.slice(0, i), ...cart.slice(i+1)];
     }
   }
   if (!newCart) {
     console.log('That item is not in your cart.');
   } else {
-    cart = newCart;
-    return cart;
+    return cart = newCart;
   }
 }
 
