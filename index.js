@@ -4,6 +4,18 @@ function getCart() {
   return cart
 }
 
+function total() {
+  let t = 0
+
+  for (var i = 0, l = cart.length; i < l; i++) {
+    for (var item in cart[i]) {
+      t += cart[i][item]
+    }
+  }
+
+  return t
+}
+
 function setCart(c) {
   cart = c
 }
@@ -63,16 +75,4 @@ function placeOrder(cardNumber) {
   console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
 
   cart = []
-}
-
-function total() {
-  let t = 0
-
-  for (var i = 0, l = cart.length; i < l; i++) {
-    for (var item in cart[i]) {
-      t += cart[i][item]
-    }
-  }
-
-  return t
 }
