@@ -10,6 +10,8 @@ function setCart(c) {
 
 function addToCart(item) {
  // write your code here
+ cart.push(item)
+ return cart
 }
 
 function viewCart() {
@@ -27,4 +29,3 @@ function removeFromCart(item) {
 function placeOrder(cardNumber) {
   // write your code here
 }
-
