@@ -24,12 +24,13 @@ function viewCart() {
     for (let i = 0; i < cart.length; i++) {
       let item = Object.keys(cart[i])[0]
       list.push(`${item} at $${cart[i][item]}`)
-      console.log(statement + list + ".")
+      console.log(statement + list.join(", ") + ".")
     }
   } else {
     console.log("Your shopping cart is empty.")
   }
 }
+// Add list array, push statements into array, and use .join(", ") to put it together
 
 function total() {
   let total = 0
@@ -43,23 +44,18 @@ function total() {
 }
 
 function removeFromCart(item) {
-  const old_length = cart.length
   for (let i = 0; i < cart.length; i++) {
     if (cart[i].hasOwnProperty(item)){
       cart.splice(i, 1)
-    }
-  if (old_length === cart.length){
-    return cart
-  } else {
-    console.log("That item is not in your cart.")
-    return cart
+      return cart
     }
   }
+  console.log("That item is not in your cart.")
 }
 
 function placeOrder(cardNumber) {
   if (cardNumber !== undefined) {
-    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}`)
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
     cart.length = 0
   } else {
     console.log("We don't have a credit card on file for you to place your order.")
