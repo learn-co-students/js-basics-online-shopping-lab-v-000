@@ -42,14 +42,23 @@ function total() {
   return totalprice
 }
 
+// function removeFromCart(item) {
+//   if (item != cart) {
+//     console.log("That item is not in your cart.")
+//   } else {
+//     //expecting a boolean return
+//     //cart.pop(item)
+//     item.pop
+//   }
+//   return cart
+// }
+
 function removeFromCart(item) {
-  if (item != cart) {
-    console.log("That item is not in your cart.")
+  if (cart.hasOwnProperty(item) === true) {
+    return cart[item].pop
   } else {
-    //expecting a boolean return
-    //cart.pop(item)
-    item.pop
-  }
+    console.log("That item is not in your cart.")
+  }  
 }
 
 function placeOrder(cardNumber) {
