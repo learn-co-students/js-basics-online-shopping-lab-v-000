@@ -47,36 +47,34 @@ function total() {
   return sum
 }
 
-// function removeFromCart(item) {
-//   // write your code here
-//   for (var i = 0; i < cart.length; i++) {
-//     if (cart[i].hasOwnProperty([item]) == true) {
-//       cart.splice(i,1)
-//     } else {
-//       console.log("That item is not in your cart.")
-//       // "That item is not in your cart."
-//     }
-//   }
-//   return cart
-// }
-
-
 function removeFromCart(item) {
   // write your code here
-  var foundItem = false;
   for (var i = 0; i < cart.length; i++) {
-    if (cart[i].hasOwnProperty([item]) == true) {
-      foundItem = true;
+    if (cart[i].hasOwnProperty([item])) {
       cart.splice(i,1)
-    }
+      return cart // what does return do for us?
+    } 
   }
-  if (foundItem = false) {
-    console.log('That item is not in your cart.')
-    // return "That item is not in your cart."
-  } else {
-    return cart
-  }
+  console.log("That item is not in your cart.")
 }
+
+
+// function removeFromCart(item) {
+//   // write your code here
+//   var foundItem = false;
+//   for (var i = 0; i < cart.length; i++) {
+//     if (cart[i].hasOwnProperty([item]) == true) {
+//       foundItem = true;
+//       cart.splice(i,1)
+//     }
+//   }
+//   if (foundItem == false) {
+//     console.log('That item is not in your cart.')
+//     // return "That item is not in your cart."
+//   } else {
+//     return cart
+//   }
+// }
 
 // function lookForThing(array, thing){
 //   var foundIt = false;
@@ -90,8 +88,9 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
-  if () {
+  if (cardNumber) {
     console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    cart = []
   } else {
     console.log("We don't have a credit card on file for you to place your order.")
   }
