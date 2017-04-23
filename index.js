@@ -31,13 +31,31 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  var total = null
+  for (var item in getCart()) {
+    for (var name in getCart()[item]) {
+       total += getCart()[item][name]
+    }
+  }
+  return total
 }
 
 function removeFromCart(item) {
-  // write your code here
+  for (var element in getCart()) {
+    if (getCart()[element].hasOwnProperty(item)) {
+      getCart().splice(element, 1)
+      break
+    }
+  }
+  console.log("That item is not in your cart.")
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (!!cardNumber === false) {
+    console.log("We don't have a credit card on file for you to place your order.")
+  }
+  else {
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    setCart(new Array)
+  }
 }
