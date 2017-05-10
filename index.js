@@ -22,16 +22,16 @@ function viewCart() {
       console.log("Your shopping cart is empty.")
     } else {
 
-      let theStr = []
+      let cartItems = []
 
       for (let i = 0; i < cart.length; i++) {
         let currentItem = cart[i]
         let currentItemName = Object.keys(currentItem)[0]
         let currentItemPrice = currentItem[currentItemName]
 
-        theStr.push(`${currentItemName} at $${currentItemPrice}`)
+        cartItems.push(`${currentItemName} at $${currentItemPrice}`)
       }
-      console.log(`In your cart, you have ${theStr.join(', ')}.`)
+      console.log(`In your cart, you have ${cartItems.join(', ')}.`)
     }
 }
 
