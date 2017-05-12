@@ -24,9 +24,9 @@ function viewCart() {
   else {
     var cart_items = []
     for (var i = 0; i < cart.length; i++) {
-      let item = Object.keys(cart[i])[0]
-      let price = cart[i][item]
-      cart_items.push(`${item} at $${price}`)
+      for (var itemName in cart[i]) {
+        cart_items.push(`${itemName} at $${cart[i][itemName]}`)
+      }
     }
     console.log(`In your cart, you have ${cart_items.join(', ')}.`)
   }
@@ -35,9 +35,9 @@ function viewCart() {
 function total() {
   // write your code here
   for (var i = 0, total = 0; i < cart.length; i++) {
-    let item = Object.keys(cart[i])[0]
-    let price = cart[i][item]
-    total += price
+    for (var itemName in cart[i]) {
+      total += cart[i][itemName]
+    }
   }
   return total
 }
@@ -62,5 +62,4 @@ function placeOrder(cardNumber) {
   else {
     console.log(`We don\'t have a credit card on file for you to place your order.`)
   }
-
 }
