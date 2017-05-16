@@ -16,7 +16,7 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart.length == 0){
+  if (cart.length === 0){
     return "Your shopping cart is empty."
   } else {
     for (var i=0; i < cart.length; i++) {
@@ -26,7 +26,9 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  for (var i=0, l=Object.values(cart).lenght, sum = 0; i < l; sum += cart[i++]) {
+
+  }
 }
 
 function removeFromCart(item) {
