@@ -16,23 +16,38 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  if (cart.length === 0){
-    return "Your shopping cart is empty."
+  var array = [];
+  if (cart.length == 0){
+    console.log("Your shopping cart is empty.")
   } else {
-    for (var cartName in cart) {
-      console.log("In your cart you have ${cartName} at ${cart[cartName]}")
+    for (var i=0; i < cart.length; i++) {
+      var cost = Object.keys(cart[i]).map(function(key) {return cart[i][key]});
+      array.push(" " + Object.keys(cart[i]) + " at $" + cost)
     }
+    console.log("In your cart, you have" + array + ".")
   }
 }
 
 function total() {
-  for (var i=0, l=Object.values(cart).lenght, sum = 0; i < l; sum += cart[i++]) {
-
+  var array = [];
+  var total = 0;
+  for (var i=0; i < cart.length; i++) {
+    var cost = Object.keys(cart[i]).map(function(key) {return cart[i][key]});
+    array.push(cost[0])
   }
+  for(var i in array) {total += parseInt(array[i])}
+  return total
 }
 
 function removeFromCart(item) {
-  // write your code here
+  for (var i=0; i < cart.length; i++) {
+    if (cart[i].hasOwnProperty(item)) {
+      cart.splice(i, 1)
+    } else {
+      console.log("That item is not in your cart.")
+      break;
+    }
+  }
 }
 
 function placeOrder(cardNumber) {
