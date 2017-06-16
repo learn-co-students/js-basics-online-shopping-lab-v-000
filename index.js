@@ -66,10 +66,11 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
-  var t = total();
+
   if (isNaN(cardNumber)) {
    console.log("We don't have a credit card on file for you to place your order.")
   } else {
+   var t = total();
    console.log(`Your total cost is $${t}, which will be charged to the card ${cardNumber}.`);
    cart.length = 0;
   }
