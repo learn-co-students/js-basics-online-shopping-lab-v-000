@@ -24,7 +24,7 @@ describe("addToCart()", function() {
   it("turns items into JavaScript objects before adding them to the cart", function() {
     addToCart("carrots");
 
-    let itemConstructor = getCart()[0].constructor;
+    var itemConstructor = getCart()[0].constructor;
 
     expect(itemConstructor).toEqual(Object);
   });
@@ -32,8 +32,8 @@ describe("addToCart()", function() {
   it("properly structures objects in the { itemName: itemPrice } format", function() {
     addToCart("daikon");
 
-    let itemName = Object.keys(getCart()[0])[0];
-    let itemPrice = getCart()[0][itemName];
+    var itemName = Object.keys(getCart()[0])[0];
+    var itemPrice = getCart()[0][itemName];
 
     expect(itemName).toEqual("daikon");
     expect(Number.isInteger(itemPrice)).toBe(true);
@@ -42,7 +42,7 @@ describe("addToCart()", function() {
   it("sets the price as an integer between 1 and 100", function() {
     addToCart("eggplant");
 
-    let itemPrice = getCart()[0]["eggplant"];
+    var itemPrice = getCart()[0]["eggplant"];
 
     expect(itemPrice).toBeLessThanOrEqualTo(100)
                      .toBeGreaterThanOrEqualTo(1);
@@ -54,8 +54,8 @@ describe("addToCart()", function() {
     addToCart("grapes");
     addToCart("halloumi");
 
-    let prices = getCart().map(c => c[Object.keys(c)[0]]);
-    let pricesEqual = prices[0] === prices[1] && prices[1] === prices[2];
+    var prices = getCart().map(c => c[Object.keys(c)[0]]);
+    var pricesEqual = prices[0] === prices[1] && prices[1] === prices[2];
 
     expect(pricesEqual).toBe(false);
   });
@@ -143,7 +143,7 @@ describe("total()", function() {
     const sorghumCost = getCart()[0]["sorghum"];
     const tarragonCost = getCart()[1]["tarragon"];
 
-    let totalCost = sorghumCost + tarragonCost;
+    var totalCost = sorghumCost + tarragonCost;
 
     expect(total()).toBe(totalCost);
 
