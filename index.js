@@ -10,21 +10,52 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  cart.push({[item]: Math.floor(Math.random() * 100)})
+  console.log(`${item} has been added to your cart.`)
+  return cart
 }
 
 function viewCart() {
-  // write your code here
+  if (!cart.length) {
+    console.log("Your shopping cart is empty.")
+  } else {
+    let items = cart.map((item) => {
+      let key = Object.keys(item)[0]
+      return `${key} at $${item[key]}`
+    })
+    console.log(`In your cart, you have ${items.join(', ')}.`)
+  }
 }
 
 function total() {
-  // write your code here
+  let t = 0
+
+  for (var i = 0, l = cart.length; i < l; i++) {
+    for (var item in cart[i]) {
+      t += cart[i][item]
+    }
+  }
+
+  return t
 }
 
 function removeFromCart(item) {
-  // write your code here
+  let find = cart.find((hash) => hash.hasOwnProperty(item))
+
+  if (typeof(find) == 'undefined') {
+    console.log("That item is not in your cart.")
+  } else {
+    cart = cart.filter((itemHash) => !itemHash.hasOwnProperty(item))
+  }
+
+  return cart
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (typeof(cardNumber) == 'undefined') {
+    console.log("We don't have a credit card on file for you to place your order.")
+  } else {
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    cart = []
+  }
 }
