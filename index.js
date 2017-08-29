@@ -44,3 +44,25 @@ function total() {
   }
   return totalCost;
 }
+
+
+function removeFromCart(item) {
+  for (var i in cart) {
+   if ([i[item]]) {
+     cart.splice(i, 1);
+     return cart;
+   }
+  } if(cart != item) {console.log("That item is not in your cart.");
+    return cart;
+ }
+}
+
+function placeOrder(ccnum) {
+  var i = 0;
+  if(!ccnum) {
+    console.log("We don't have a credit card on file for you to place your order.");
+  }
+  else {console.log("Your total cost is $" + total() + ", which will be charged to the card " + ccnum + ".");
+   }
+    cart.length = 0;
+}
