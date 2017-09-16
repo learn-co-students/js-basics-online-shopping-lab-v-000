@@ -10,47 +10,57 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- getCart().push({ [item]: Math.floor(Math.random() * 100 + 1) })
- console.log(`${item} has been added to your cart.`)
- return getCart()
+  const price = Math.floor(Math.random() * 100 + 1)
+  cart.push({ [item]: price })
+  console.log(`${item} has been added to your cart.`)
+  return cart
 }
 
 function viewCart() {
-  if (!getCart().length) {
+  const l = cart.length
+  if (!l) {
     console.log("Your shopping cart is empty.")
-  } else if (getCart().length === 1) {
-    console.log(`In your cart, you have ${Object.keys(getCart()[0])[0]} at $${Object.values(getCart()[0])[0]}.`)
-  } else if (getCart().length === 2) {
-    console.log(`In your cart, you have ${Object.keys(getCart()[0])[0]} at $${Object.values(getCart()[0])[0]} and ${Object.keys(getCart()[1])[0]} at $${Object.values(getCart()[1])[0]}.`)
-  } else {
-    const allItemsExceptLast = []
-    for (let i = 0; i < getCart().length - 1; i++) {
-      allItemsExceptLast.push(`${Object.keys(getCart()[i])[0]} at $${Object.values(getCart()[i])[0]}`)
-    }
-    console.log(`In your cart, you have ${allItemsExceptLast.join(', ')}, and ${Object.keys(getCart()[getCart().length - 1])[0]} at $${Object.values(getCart()[getCart().length - 1])[0]}.`)
   }
+  let itemsAndPrices = []
+  for (let i = 0; i < l; i++) {
+    let itemAndPrice = cart[i]
+    let item = Object.keys(itemAndPrice)[0]
+    let price = itemAndPrice[item]
+    itemsAndPrices.push(`${item} at $${price}`)
+  }
+  switch(itemsAndPrices.length) {
+    case 1:
+      break;
+    case 2:
+      itemsAndPrices = itemsAndPrices.join(" and ")
+      break;
+    default:
+      itemsAndPrices[l - 1] = "and ".concat(itemsAndPrices[l - 1])
+      itemsAndPrices = itemsAndPrices.join(", ")
+  }
+  console.log(`In your cart, you have ${itemsAndPrices}.`)
 }
 
 function total() {
-  var totalCost = 0
-  for (let i = 0; i < getCart().length; i++) {
-    totalCost += Object.values(getCart()[i])[0]
+  let totalCost = 0
+  for (let i = 0; i < cart.length; i++) {
+    totalCost += Object.values(cart[i])[0]
   }
   return totalCost
 }
 
 function removeFromCart(item) {
-  var itemFound = false
-  for (let i = 0; i < getCart().length; i++) {
-    if (getCart()[i].hasOwnProperty(item)) {
-      getCart().splice(i, 1)
+  let itemFound = false
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].hasOwnProperty(item)) {
+      cart.splice(i, 1)
       itemFound = true
     }
   }
   if (!itemFound) {
     console.log("That item is not in your cart.")
   }
-  return getCart()
+  return cart
 }
 
 function placeOrder(cardNumber) {
