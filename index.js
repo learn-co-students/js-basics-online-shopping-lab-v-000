@@ -23,6 +23,7 @@ function viewCart() {
   for (var item in cart ) {
     cartItems.push(`${cart[item].itemName} at $${cart[item].itemPrice}`)
   }
+
   if (!cart.length) {
     return "Your shopping cart is empty."
   }
@@ -37,7 +38,11 @@ function viewCart() {
 }
 
 function total() {
-  // write your code here
+  var totalCartPrice = 0
+  for (var item in cart ) {
+    totalCartPrice += cart[item].itemPrice
+  }
+  return totalCartPrice
 }
 
 function removeFromCart(item) {
